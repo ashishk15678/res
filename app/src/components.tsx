@@ -1154,6 +1154,32 @@ export function GtaMasking() {
   );
 }
 
+function AvatarStack() {
+  const images = [
+    "https://api.dicebear.com/9.x/adventurer/svg?seed=Luis",
+    "https://api.dicebear.com/9.x/adventurer/svg?seed=Brooklynn",
+    "https://api.dicebear.com/9.x/adventurer/svg?seed=Alexander",
+    "https://api.dicebear.com/9.x/adventurer/svg?seed=Amaya",
+  ];
+  return (
+    <div className="w-full py-4 flex flex-row -space-x-4 items-center justify-center">
+      {images.map((image) => (
+        <Image
+          src={image}
+          height={45}
+          width={45}
+          key={image}
+          alt=""
+          className=" bg-white/90 rounded-full hover:z-2 hover:scale-y-110 peer peer-hover:opacity-80  hover:mx-0.5  transition-all duration-300"
+        />
+      ))}
+      <div className="-z-1 bg-zinc-300 backdrop-blur-2xl rounded-full p-2 text-sm text-zinc-500">
+        +5
+      </div>
+    </div>
+  );
+}
+
 // All the compo
 export const components = [
   {
@@ -1514,6 +1540,14 @@ const lol = works,
     tags: ["Button", "Animation"],
     component: <AppleButton />,
     code: `Apple button`,
+  },
+  {
+    id: "17",
+    title: "Avatar stack",
+    description: "",
+    tags: ["Avatar", "Animation"],
+    component: <AvatarStack />,
+    code: ``,
   },
 ];
 

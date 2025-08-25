@@ -2,16 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['picsum.photos', "github.com"], // Add other domains as needed
+    dangerouslyAllowSVG: true,
+    domains: ["picsum.photos", "github.com", "api.dicebear.com"], // Add other domains as needed
     unoptimized: false,
   },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ["framer-motion", "lucide-react"],
   },
   staticPageGenerationTimeout: 120,
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    removeConsole: process.env.NODE_ENV === "production",
   },
   // Enable strict mode for better development experience
   reactStrictMode: true,
